@@ -1,0 +1,63 @@
+2019-08-02 14:35:40,900 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-02 14:35:40,979 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-02 14:35:41,087 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-02 14:35:48,897 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_permission b ORDER BY b.PARENT_ID 
+2019-08-02 14:35:48,898 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 14:35:48,912 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 11
+2019-08-02 14:35:48,914 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_role_ref_sys_permission a JOIN sys_permission b ON a.SYS_PERMISSION_ID = b.ID WHERE a.SYS_ROLE_ID = ? ORDER BY b.PARENT_ID 
+2019-08-02 14:35:48,914 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-02 14:35:48,922 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-02 14:36:08,686 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_permission b ORDER BY b.PARENT_ID 
+2019-08-02 14:36:08,687 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 14:36:08,689 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 11
+2019-08-02 14:36:08,689 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_role_ref_sys_permission a JOIN sys_permission b ON a.SYS_PERMISSION_ID = b.ID WHERE a.SYS_ROLE_ID = ? ORDER BY b.PARENT_ID 
+2019-08-02 14:36:08,690 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-02 14:36:08,692 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-02 14:36:15,090 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_permission b ORDER BY b.PARENT_ID 
+2019-08-02 14:36:15,090 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 14:36:15,093 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 11
+2019-08-02 14:36:15,094 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_role_ref_sys_permission a JOIN sys_permission b ON a.SYS_PERMISSION_ID = b.ID WHERE a.SYS_ROLE_ID = ? ORDER BY b.PARENT_ID 
+2019-08-02 14:36:15,094 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-02 14:36:15,098 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-02 14:36:16,579 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_permission b ORDER BY b.PARENT_ID 
+2019-08-02 14:36:16,580 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 14:36:16,582 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 11
+2019-08-02 14:36:16,582 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_role_ref_sys_permission a JOIN sys_permission b ON a.SYS_PERMISSION_ID = b.ID WHERE a.SYS_ROLE_ID = ? ORDER BY b.PARENT_ID 
+2019-08-02 14:36:16,583 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-02 14:36:16,584 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-02 14:36:23,117 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user 
+2019-08-02 14:36:23,118 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 14:36:23,120 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-08-02 14:36:51,430 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user 
+2019-08-02 14:36:51,430 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 14:36:51,432 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-08-02 14:42:22,669 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-02 14:42:22,753 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-02 14:42:22,821 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-02 14:42:44,931 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user 
+2019-08-02 14:42:44,932 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 14:42:44,934 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-08-02 14:44:39,876 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user 
+2019-08-02 14:44:39,876 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 14:44:39,880 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 3
+2019-08-02 15:20:03,009 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-02 15:20:03,029 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-02 15:20:03,049 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-02 16:23:53,344 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-02 16:23:53,349 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-02 16:23:53,354 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-02 16:24:41,796 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-02 16:24:41,797 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-02 16:24:41,798 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-02 16:26:41,553 ERROR (FileController.java:44)- null
+2019-08-02 16:48:42,575 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-02 16:48:42,739 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-02 16:48:43,021 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-02 16:49:00,360 ERROR (FileController.java:44)- null
+2019-08-02 16:49:13,633 ERROR (FileController.java:44)- null
+2019-08-02 17:19:55,531 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_permission b ORDER BY b.PARENT_ID 
+2019-08-02 17:19:55,610 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 
+2019-08-02 17:19:55,686 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 11
+2019-08-02 17:19:55,692 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT distinct b.ID, b.PARENT_ID, b. NAME, b.URL, b.ICON, b.SEQ FROM sys_role_ref_sys_permission a JOIN sys_permission b ON a.SYS_PERMISSION_ID = b.ID WHERE a.SYS_ROLE_ID = ? ORDER BY b.PARENT_ID 
+2019-08-02 17:19:55,693 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-02 17:19:55,695 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8

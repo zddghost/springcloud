@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.web.system.dao.SysDepartmentMapper" >
+  <resultMap id="BaseResultMap" type="com.example.web.system.entity.SysDepartment" >
+    <id column="ID" property="id" jdbcType="CHAR" />
+    <result column="SYS_USER_ID" property="sysUserId" jdbcType="CHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="CHARGENAME" property="chargename" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="CODE" property="code" jdbcType="VARCHAR" />
+    <result column="CREATEUSER" property="createuser" jdbcType="CHAR" />
+    <result column="CREATEDATE" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="UPDATEUSER" property="updateuser" jdbcType="CHAR" />
+    <result column="UPDATEDATE" property="updatedate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.example.web.system.entity.SysDepartment" extends="BaseResultMap" >
+    <result column="CDESC" property="cdesc" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, SYS_USER_ID, NAME, CHARGENAME, PHONE, CODE, CREATEUSER, CREATEDATE, UPDATEUSER, 
+    UPDATEDATE
+  </sql>
+  <sql id="Blob_Column_List" >
+    CDESC
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.example.web.system.entity.SysDepartmentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from sys_department
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.web.system.entity.SysDepartmentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_department
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from sys_department
+    where ID = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sys_department
+    where ID = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.web.system.entity.SysDepartmentExample" >
+    delete from sys_department
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.web.system.entity.SysDepartment" >
+    insert into sys_department (ID, SYS_USER_ID, NAME, 
+      CHARGENAME, PHONE, CODE, 
+      CREATEUSER, CREATEDATE, UPDATEUSER, 
+      UPDATEDATE, CDESC)
+    values (#{id,jdbcType=CHAR}, #{sysUserId,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, 
+      #{chargename,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{createuser,jdbcType=CHAR}, #{createdate,jdbcType=TIMESTAMP}, #{updateuser,jdbcType=CHAR}, 
+      #{updatedate,jdbcType=TIMESTAMP}, #{cdesc,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.web.system.entity.SysDepartment" >
+    insert into sys_department
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="sysUserId != null" >
+        SYS_USER_ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="chargename != null" >
+        CHARGENAME,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="code != null" >
+        CODE,
+      </if>
+      <if test="createuser != null" >
+        CREATEUSER,
+      </if>
+      <if test="createdate != null" >
+        CREATEDATE,
+      </if>
+      <if test="updateuser != null" >
+        UPDATEUSER,
+      </if>
+      <if test="updatedate != null" >
+        UPDATEDATE,
+      </if>
+      <if test="cdesc != null" >
+        CDESC,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="sysUserId != null" >
+        #{sysUserId,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="chargename != null" >
+        #{chargename,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="createuser != null" >
+        #{createuser,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuser != null" >
+        #{updateuser,jdbcType=CHAR},
+      </if>
+      <if test="updatedate != null" >
+        #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cdesc != null" >
+        #{cdesc,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.web.system.entity.SysDepartmentExample" resultType="java.lang.Integer" >
+    select count(*) from sys_department
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_department
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=CHAR},
+      </if>
+      <if test="record.sysUserId != null" >
+        SYS_USER_ID = #{record.sysUserId,jdbcType=CHAR},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chargename != null" >
+        CHARGENAME = #{record.chargename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null" >
+        PHONE = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.code != null" >
+        CODE = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createuser != null" >
+        CREATEUSER = #{record.createuser,jdbcType=CHAR},
+      </if>
+      <if test="record.createdate != null" >
+        CREATEDATE = #{record.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateuser != null" >
+        UPDATEUSER = #{record.updateuser,jdbcType=CHAR},
+      </if>
+      <if test="record.updatedate != null" >
+        UPDATEDATE = #{record.updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.cdesc != null" >
+        CDESC = #{record.cdesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update sys_department
+    set ID = #{record.id,jdbcType=CHAR},
+      SYS_USER_ID = #{record.sysUserId,jdbcType=CHAR},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      CHARGENAME = #{record.chargename,jdbcType=VARCHAR},
+      PHONE = #{record.phone,jdbcType=VARCHAR},
+      CODE = #{record.code,jdbcType=VARCHAR},
+      CREATEUSER = #{record.createuser,jdbcType=CHAR},
+      CREATEDATE = #{record.createdate,jdbcType=TIMESTAMP},
+      UPDATEUSER = #{record.updateuser,jdbcType=CHAR},
+      UPDATEDATE = #{record.updatedate,jdbcType=TIMESTAMP},
+      CDESC = #{record.cdesc,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_department
+    set ID = #{record.id,jdbcType=CHAR},
+      SYS_USER_ID = #{record.sysUserId,jdbcType=CHAR},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      CHARGENAME = #{record.chargename,jdbcType=VARCHAR},
+      PHONE = #{record.phone,jdbcType=VARCHAR},
+      CODE = #{record.code,jdbcType=VARCHAR},
+      CREATEUSER = #{record.createuser,jdbcType=CHAR},
+      CREATEDATE = #{record.createdate,jdbcType=TIMESTAMP},
+      UPDATEUSER = #{record.updateuser,jdbcType=CHAR},
+      UPDATEDATE = #{record.updatedate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.web.system.entity.SysDepartment" >
+    update sys_department
+    <set >
+      <if test="sysUserId != null" >
+        SYS_USER_ID = #{sysUserId,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="chargename != null" >
+        CHARGENAME = #{chargename,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        CODE = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="createuser != null" >
+        CREATEUSER = #{createuser,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null" >
+        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuser != null" >
+        UPDATEUSER = #{updateuser,jdbcType=CHAR},
+      </if>
+      <if test="updatedate != null" >
+        UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="cdesc != null" >
+        CDESC = #{cdesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.web.system.entity.SysDepartment" >
+    update sys_department
+    set SYS_USER_ID = #{sysUserId,jdbcType=CHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      CHARGENAME = #{chargename,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      CODE = #{code,jdbcType=VARCHAR},
+      CREATEUSER = #{createuser,jdbcType=CHAR},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      UPDATEUSER = #{updateuser,jdbcType=CHAR},
+      UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+      CDESC = #{cdesc,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.web.system.entity.SysDepartment" >
+    update sys_department
+    set SYS_USER_ID = #{sysUserId,jdbcType=CHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      CHARGENAME = #{chargename,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      CODE = #{code,jdbcType=VARCHAR},
+      CREATEUSER = #{createuser,jdbcType=CHAR},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      UPDATEUSER = #{updateuser,jdbcType=CHAR},
+      UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=CHAR}
+  </update>
+</mapper>

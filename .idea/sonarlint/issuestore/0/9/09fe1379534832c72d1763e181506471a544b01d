@@ -1,0 +1,17 @@
+
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(°Ðâ›
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‹Ðï«
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÜíÀû
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆú·¬
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(´é¡²
+gsquid:S00116"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Â¯¢
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ì©™“ûÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ƒå–Ã
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ûçëþÿÿÿÿ
+R
+squid:S106"9Replace this use of System.out or System.err by a logger.(‚é€Þûÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(õ›ííùÿÿÿÿ
+_squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(˜†þ$
+Ísquid:S1598"·This file "RedisUtil.java" should be located in "com\example\web\common\utils" directory, not in "D:\project\springcloud\system-service\src\main\java\com\example\system\common\utils".(ôå†û

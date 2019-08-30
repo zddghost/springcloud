@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.web.system.dao.SysRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.example.web.system.entity.SysRole" >
+    <id column="ID" property="id" jdbcType="CHAR" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="CODE" property="code" jdbcType="VARCHAR" />
+    <result column="CDESC" property="cdesc" jdbcType="VARCHAR" />
+    <result column="CREATEUSER" property="createuser" jdbcType="CHAR" />
+    <result column="CREATEDATE" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="UPDATEUSER" property="updateuser" jdbcType="CHAR" />
+    <result column="UPDATEDATE" property="updatedate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, NAME, CODE, CDESC, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.web.system.entity.SysRoleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_role
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from sys_role
+    where ID = #{id,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from sys_role
+    where ID = #{id,jdbcType=CHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.web.system.entity.SysRoleExample" >
+    delete from sys_role
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.web.system.entity.SysRole" >
+    insert into sys_role (ID, NAME, CODE, 
+      CDESC, CREATEUSER, CREATEDATE, 
+      UPDATEUSER, UPDATEDATE)
+    values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{cdesc,jdbcType=VARCHAR}, #{createuser,jdbcType=CHAR}, #{createdate,jdbcType=TIMESTAMP}, 
+      #{updateuser,jdbcType=CHAR}, #{updatedate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.web.system.entity.SysRole" >
+    insert into sys_role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="code != null" >
+        CODE,
+      </if>
+      <if test="cdesc != null" >
+        CDESC,
+      </if>
+      <if test="createuser != null" >
+        CREATEUSER,
+      </if>
+      <if test="createdate != null" >
+        CREATEDATE,
+      </if>
+      <if test="updateuser != null" >
+        UPDATEUSER,
+      </if>
+      <if test="updatedate != null" >
+        UPDATEDATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=CHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="cdesc != null" >
+        #{cdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createuser != null" >
+        #{createuser,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuser != null" >
+        #{updateuser,jdbcType=CHAR},
+      </if>
+      <if test="updatedate != null" >
+        #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.web.system.entity.SysRoleExample" resultType="java.lang.Integer" >
+    select count(*) from sys_role
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_role
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=CHAR},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.code != null" >
+        CODE = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cdesc != null" >
+        CDESC = #{record.cdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createuser != null" >
+        CREATEUSER = #{record.createuser,jdbcType=CHAR},
+      </if>
+      <if test="record.createdate != null" >
+        CREATEDATE = #{record.createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateuser != null" >
+        UPDATEUSER = #{record.updateuser,jdbcType=CHAR},
+      </if>
+      <if test="record.updatedate != null" >
+        UPDATEDATE = #{record.updatedate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_role
+    set ID = #{record.id,jdbcType=CHAR},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      CODE = #{record.code,jdbcType=VARCHAR},
+      CDESC = #{record.cdesc,jdbcType=VARCHAR},
+      CREATEUSER = #{record.createuser,jdbcType=CHAR},
+      CREATEDATE = #{record.createdate,jdbcType=TIMESTAMP},
+      UPDATEUSER = #{record.updateuser,jdbcType=CHAR},
+      UPDATEDATE = #{record.updatedate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.web.system.entity.SysRole" >
+    update sys_role
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        CODE = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="cdesc != null" >
+        CDESC = #{cdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="createuser != null" >
+        CREATEUSER = #{createuser,jdbcType=CHAR},
+      </if>
+      <if test="createdate != null" >
+        CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateuser != null" >
+        UPDATEUSER = #{updateuser,jdbcType=CHAR},
+      </if>
+      <if test="updatedate != null" >
+        UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.web.system.entity.SysRole" >
+    update sys_role
+    set NAME = #{name,jdbcType=VARCHAR},
+      CODE = #{code,jdbcType=VARCHAR},
+      CDESC = #{cdesc,jdbcType=VARCHAR},
+      CREATEUSER = #{createuser,jdbcType=CHAR},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      UPDATEUSER = #{updateuser,jdbcType=CHAR},
+      UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=CHAR}
+  </update>
+  <resultMap id="menusAllMap" type="com.example.web.system.entity.vo.MenusTree">
+    <result column="ID" property="id"/>
+    <result column="PARENT_ID" property="pid"/>
+    <result column="NAME" property="name"/>
+    <result column="URL" property="icon"/>
+    <result column="URL" property="url"/>
+    <result column="SEQ" property="seq"/>
+  </resultMap>
+  <select id="menusAll" resultMap="menusAllMap">
+        SELECT distinct
+            b.ID,
+            b.PARENT_ID,
+            b. NAME,
+            b.URL,
+            b.ICON,
+            b.SEQ
+        FROM
+            sys_permission b
+        ORDER BY
+            b.PARENT_ID
+  </select>
+  <resultMap id="menusMap" type="com.example.web.system.entity.vo.MenusTree">
+    <result column="ID" property="id"/>
+    <result column="PARENT_ID" property="pid"/>
+    <result column="NAME" property="name"/>
+    <result column="ICO" property="icon"/>
+    <result column="URL" property="url"/>
+    <result column="SEQ" property="seq"/>
+  </resultMap>
+  <select id="menus" resultMap="menusMap" parameterType="string">
+        SELECT distinct
+            b.ID,
+            b.PARENT_ID,
+            b. NAME,
+            b.URL,
+            b.ICON,
+            b.SEQ
+        FROM
+            sys_role_ref_sys_permission a
+        JOIN sys_permission b ON a.SYS_PERMISSION_ID = b.ID
+        WHERE a.SYS_ROLE_ID = #{roleId}
+        ORDER BY
+            b.PARENT_ID
+  </select>
+
+  <delete id="deleteByRole" parameterType="string">
+    DELETE
+    FROM
+        sys_role_ref_sys_permission
+    WHERE
+        SYS_ROLE_ID = #{roleId}
+  </delete>
+
+  <insert id="save" parameterType="com.example.web.system.entity.from.MenusSave">
+    INSERT INTO `sys_role_ref_sys_permission`
+    <trim prefix="(" suffix=")">
+      `SYS_ROLE_ID`,
+      `SYS_PERMISSION_ID`
+    </trim>
+    VALUES
+
+    <foreach collection="ids" item="id" separator=",">
+      <trim prefix="(" suffix=")">
+        #{roleId}  ,#{id}
+      </trim>
+    </foreach>
+  </insert>
+
+
+</mapper>

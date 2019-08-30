@@ -1,0 +1,33 @@
+
+Isquid:S1066"/Merge this if statement with the enclosing one.(ôÊ¨šúÿÿÿÿ
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(÷ä—Åûÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ñ±™Œ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(´Ë”Ö
+Isquid:S1066"/Merge this if statement with the enclosing one.(ôÊ¨šúÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(˜ÓÊÖÿÿÿÿÿ
+msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ááµ°şÿÿÿÿ
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(‚ğ§Ã
+^squid:CallToDeprecatedMethod"3Remove this use of "getCellType"; it is deprecated.(óëÕŠùÿÿÿÿ
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ááµ°şÿÿÿÿ
+lsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ñ•Ÿ«ıÿÿÿÿ
+\squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ÜŞ®š
+msquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(÷ä—Åûÿÿÿÿ
+]squid:CallToDeprecatedMethod"7Remove this use of "CELL_TYPE_BLANK"; it is deprecated.(·øë
+_squid:CallToDeprecatedMethod"9Remove this use of "CELL_TYPE_NUMERIC"; it is deprecated.(¼¸²˜
+Jsquid:S2209"5Change this instance-reference to a static reference.(ĞĞ±å
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(»•ûÿÿÿÿ
+]squid:CallToDeprecatedMethod"8Remove this use of "CELL_TYPE_STRING"; it is deprecated.(‚·ï
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÿŸ’ûıÿÿÿÿ
+_squid:S3027"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(ª²—
+r
+squid:S135"YReduce the total number of break and continue statements in this loop to use at most one.(«ş‹Îıÿÿÿÿ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(ñ¶à
+Osquid:S2209"5Change this instance-reference to a static reference.(ÑñÁ÷şÿÿÿÿ
+Jsquid:S2209"5Change this instance-reference to a static reference.(Ş—«ğ
+\squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(íáü¯
+[squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Û½£
+_squid:CallToDeprecatedMethod"9Remove this use of "CELL_TYPE_BOOLEAN"; it is deprecated.(…ì´´
+Osquid:S2209"5Change this instance-reference to a static reference.(Ç Íùÿÿÿÿ
+asquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(·Ñš—øÿÿÿÿ

@@ -1,0 +1,16 @@
+
+\squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(Ÿğ¸Ä
+8squid:S2129"$Remove this "BigDecimal" constructor(Êìœ
+_squid:S00119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(Ÿğ¸Ä
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+ssquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(™ºöºıÿÿÿÿ
+gsquid:S3008"RRename this field "MAXROWS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–èÈ
+rsquid:S1488"^Immediately return this expression instead of assigning it to the temporary variable "result".(Êìœ
+5squid:S2111"!Use "BigDecimal.valueOf" instead.(Êìœ
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+`squid:S2095"KUse try-with-resources or close this "SXSSFWorkbook" in a "finally" clause.(Êû¯ù
+ysquid:S1488"_Immediately return this expression instead of assigning it to the temporary variable "nowTime".(Ø€ˆ¸ıÿÿÿÿ
+\squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(¼¬ŸÓ
+_squid:S00119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(Ã«¥Ã
+Tsquid:S1118":Add a private constructor to hide the implicit public one.(Â‚ÔÏúÿÿÿÿ
+Wsquid:UnusedPrivateMethod"/Remove this unused private "map2Object" method.(Æ€åíùÿÿÿÿ

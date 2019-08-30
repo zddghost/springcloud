@@ -1,0 +1,4 @@
+
+\squid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(ºÛßý
+Isquid:EmptyStatementUsageCheck"Remove this empty statement.(Åñ­õþÿÿÿÿ
+8squid:S1148"#Use a logger to log this exception.(½×‰è

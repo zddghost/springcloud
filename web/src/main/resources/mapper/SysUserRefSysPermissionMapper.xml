@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.web.system.dao.SysUserRefSysPermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.example.web.system.entity.SysUserRefSysPermission" >
+    <result column="SYSY_USER_ID" property="sysyUserId" jdbcType="CHAR" />
+    <result column="SYS_PERMISSION_ID" property="sysPermissionId" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    SYSY_USER_ID, SYS_PERMISSION_ID
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.web.system.entity.SysUserRefSysPermissionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_user_ref_sys_permission
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.example.web.system.entity.SysUserRefSysPermissionExample" >
+    delete from sys_user_ref_sys_permission
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.web.system.entity.SysUserRefSysPermission" >
+    insert into sys_user_ref_sys_permission (SYSY_USER_ID, SYS_PERMISSION_ID)
+    values (#{sysyUserId,jdbcType=CHAR}, #{sysPermissionId,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.web.system.entity.SysUserRefSysPermission" >
+    insert into sys_user_ref_sys_permission
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sysyUserId != null" >
+        SYSY_USER_ID,
+      </if>
+      <if test="sysPermissionId != null" >
+        SYS_PERMISSION_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sysyUserId != null" >
+        #{sysyUserId,jdbcType=CHAR},
+      </if>
+      <if test="sysPermissionId != null" >
+        #{sysPermissionId,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.web.system.entity.SysUserRefSysPermissionExample" resultType="java.lang.Integer" >
+    select count(*) from sys_user_ref_sys_permission
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sys_user_ref_sys_permission
+    <set >
+      <if test="record.sysyUserId != null" >
+        SYSY_USER_ID = #{record.sysyUserId,jdbcType=CHAR},
+      </if>
+      <if test="record.sysPermissionId != null" >
+        SYS_PERMISSION_ID = #{record.sysPermissionId,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sys_user_ref_sys_permission
+    set SYSY_USER_ID = #{record.sysyUserId,jdbcType=CHAR},
+      SYS_PERMISSION_ID = #{record.sysPermissionId,jdbcType=CHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

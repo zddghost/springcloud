@@ -1,0 +1,178 @@
+2019-08-06 14:50:42,446 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-06 14:50:42,540 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-06 14:50:42,589 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 14:50:56,740 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT tmp.* FROM ( ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_role_ref_sys_permission b ON a.SYS_ROLE_ID = b.SYS_ROLE_ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) UNION ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_user_ref_sys_permission b ON b.SYSY_USER_ID = a.ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) ) tmp WHERE 1 = 1 ORDER BY tmp.ID 
+2019-08-06 14:50:56,742 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String), 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 14:50:56,760 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-06 14:51:01,364 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT tmp.* FROM ( ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_role_ref_sys_permission b ON a.SYS_ROLE_ID = b.SYS_ROLE_ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) UNION ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_user_ref_sys_permission b ON b.SYSY_USER_ID = a.ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) ) tmp WHERE 1 = 1 ORDER BY tmp.ID 
+2019-08-06 14:51:01,365 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String), 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 14:51:01,368 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-06 14:51:16,841 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT tmp.* FROM ( ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_role_ref_sys_permission b ON a.SYS_ROLE_ID = b.SYS_ROLE_ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) UNION ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_user_ref_sys_permission b ON b.SYSY_USER_ID = a.ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) ) tmp WHERE 1 = 1 ORDER BY tmp.ID 
+2019-08-06 14:51:16,842 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String), 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 14:51:16,843 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-06 14:51:24,953 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT tmp.* FROM ( ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_role_ref_sys_permission b ON a.SYS_ROLE_ID = b.SYS_ROLE_ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) UNION ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_user_ref_sys_permission b ON b.SYSY_USER_ID = a.ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) ) tmp WHERE 1 = 1 ORDER BY tmp.ID 
+2019-08-06 14:51:24,954 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String), 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 14:51:24,955 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-06 14:52:35,858 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT tmp.* FROM ( ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_role_ref_sys_permission b ON a.SYS_ROLE_ID = b.SYS_ROLE_ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) UNION ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_user_ref_sys_permission b ON b.SYSY_USER_ID = a.ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) ) tmp WHERE 1 = 1 ORDER BY tmp.ID 
+2019-08-06 14:52:35,904 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String), 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 14:52:35,950 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-06 14:52:39,792 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT tmp.* FROM ( ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_role_ref_sys_permission b ON a.SYS_ROLE_ID = b.SYS_ROLE_ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) UNION ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_user_ref_sys_permission b ON b.SYSY_USER_ID = a.ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) ) tmp WHERE 1 = 1 ORDER BY tmp.ID 
+2019-08-06 14:52:39,793 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String), 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 14:52:39,795 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-06 14:52:52,813 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: SELECT tmp.* FROM ( ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_role_ref_sys_permission b ON a.SYS_ROLE_ID = b.SYS_ROLE_ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) UNION ( SELECT c.ID, c.PARENT_ID, c. NAME, c.URL, c.ICON, c.SEQ FROM sys_user a JOIN sys_user_ref_sys_permission b ON b.SYSY_USER_ID = a.ID JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID WHERE a.ID = ? ) ) tmp WHERE 1 = 1 ORDER BY tmp.ID 
+2019-08-06 14:52:52,814 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String), 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 14:52:52,815 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 8
+2019-08-06 15:05:32,094 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:05:32,096 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 15:05:32,105 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:05:36,262 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:05:36,263 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 15:05:36,266 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:05:37,684 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:05:37,684 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 15:05:37,686 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:05:38,392 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:05:38,393 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 15:05:38,394 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:06:15,179 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:06:15,180 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 15:06:15,181 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:06:51,114 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:06:51,114 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 15:06:51,116 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:10:12,141 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 15:10:12,143 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), null
+2019-08-06 15:10:12,144 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 0
+2019-08-06 15:10:41,318 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 15:10:41,318 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 15:10:41,323 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 15:11:09,747 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:11:09,748 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-06 15:11:09,749 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:11:11,604 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:11:11,605 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-06 15:11:11,608 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:11:12,420 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:11:12,421 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-06 15:11:12,422 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:11:12,935 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:11:12,936 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-06 15:11:12,938 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:11:18,486 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:11:18,486 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-06 15:11:18,488 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:11:19,585 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 15:11:19,586 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 1(String)
+2019-08-06 15:11:19,587 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 15:11:53,966 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 15:11:53,967 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 15:11:53,971 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 15:12:01,521 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 15:12:01,522 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 15:12:01,525 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 15:13:13,307 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 15:13:13,352 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 15:13:13,358 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 15:14:35,191 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 15:14:35,242 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 15:14:35,248 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 15:20:18,364 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 15:20:18,417 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 15:20:18,425 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 16:01:57,075 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 16:01:57,076 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 16:01:57,081 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 16:02:40,760 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 16:02:40,761 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 16:02:40,764 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 16:40:09,151 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:40:16,230 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:40:16,246 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:41:17,020 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:测试数据
+2019-08-06 16:41:57,265 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:41:57,289 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:42:14,662 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:44:43,685 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:44:43,706 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:45:16,065 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:45:16,087 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:47:07,221 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:47:07,244 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:47:15,533 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:47:15,551 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:47:16,960 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:47:16,978 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:48:08,022 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:48:08,054 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:48:11,466 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:48:11,485 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:48:12,989 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:49:00,598 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:49:08,056 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:49:08,073 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:49:24,723 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:49:24,743 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:49:28,975 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:49:28,999 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:49:38,332 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:49:39,343 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:49:39,883 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:49:40,426 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:49:40,990 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:49:41,503 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:49:42,047 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:49:42,525 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:50:13,823 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:50:13,846 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:50:15,792 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:50:15,810 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:50:34,112 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:50:34,135 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:50:37,132 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:50:37,151 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:51:07,789 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:51:07,814 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:51:10,408 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 16:51:10,432 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:51:34,091 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:51:36,931 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:哒哒哒
+2019-08-06 16:51:46,546 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅
+2019-08-06 16:54:57,250 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-06 16:54:57,337 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-06 16:54:57,418 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 16:56:52,405 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-06 16:56:52,458 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-06 16:56:52,510 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 16:59:10,812 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user WHERE ( NAME = ? ) 
+2019-08-06 16:59:10,813 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zxx(String)
+2019-08-06 16:59:10,816 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1
+2019-08-06 16:59:28,836 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:sdsds
+2019-08-06 16:59:42,585 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:爱上大大的
+2019-08-06 16:59:44,434 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:爱上大大的
+2019-08-06 16:59:50,268 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 16:59:54,010 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:爱上大大的
+2019-08-06 16:59:55,376 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:爱上大大的
+2019-08-06 17:00:02,671 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅去吾问无为谓
+2019-08-06 17:02:15,894 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 17:02:15,914 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 17:03:31,999 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅去吾问无为谓
+2019-08-06 17:04:10,367 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅去吾问无为谓
+2019-08-06 17:04:11,677 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅去吾问无为谓
+2019-08-06 17:04:13,376 INFO (WebSocketServer.java:43)- 有新窗口开始监听:20,当前在线人数为1
+2019-08-06 17:04:15,390 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅去吾问无为谓
+2019-08-06 17:04:16,206 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅去吾问无为谓
+2019-08-06 17:04:16,823 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅去吾问无为谓
+2019-08-06 17:04:38,308 INFO (WebSocketServer.java:59)- 有一连接关闭！当前在线人数为0
+2019-08-06 17:05:58,343 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 17:05:58,401 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), null
+2019-08-06 17:05:58,404 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 0
+2019-08-06 17:06:23,692 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 17:06:23,694 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 1(String)
+2019-08-06 17:06:23,698 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 17:07:09,996 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: update sys_user SET NAME = ?, PASSWORD = ?, REAL_NAME = ? where ID = ? 
+2019-08-06 17:07:09,996 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: zdd(String), zdd755(String), zdd(String), 3c1d27c355f24bf392da4675fdf63151(String)
+2019-08-06 17:07:10,000 DEBUG (BaseJdbcLogger.java:159)- <==    Updates: 1
+2019-08-06 17:08:57,107 INFO (WebSocketServer.java:102)- 推送消息到窗口20，推送内容:为企鹅去吾问无为谓
+2019-08-06 17:10:56,108 DEBUG (BaseJdbcLogger.java:159)- ==>  Preparing: select ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE from sys_user where ID = ? 
+2019-08-06 17:10:56,109 DEBUG (BaseJdbcLogger.java:159)- ==> Parameters: 3C1D27C355F24BF392DA4675FDF63151(String)
+2019-08-06 17:10:56,207 DEBUG (BaseJdbcLogger.java:159)- <==      Total: 1

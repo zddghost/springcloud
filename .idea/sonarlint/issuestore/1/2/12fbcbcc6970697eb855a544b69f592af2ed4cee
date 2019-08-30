@@ -1,0 +1,6 @@
+
+Š"squid:ClassVariableVisibilityCheck"^Make applicationContext a static final constant or non-public and provide accessors if needed.(²ñº
+zsquid:UselessImportCheck"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ
+¢%squid:RedundantThrowsDeclarationCheck"sRemove the declaration of thrown exception 'org.springframework.beans.BeansException' which is a runtime exception.(çÜ³”
+Msquid:S1444"8Make this "public static applicationContext" field final(²ñº
+Psquid:S2696"6Make the enclosing method "static" or remove this set.(™´Üôùÿÿÿÿ

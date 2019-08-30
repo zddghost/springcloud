@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.system.system.dao.SysUserMapper">
+    <resultMap id="BaseResultMap" type="com.example.system.system.entity.SysUser">
+        <id column="ID" property="id" jdbcType="CHAR"/>
+        <result column="SYS_DEPARTMENT_ID" property="sysDepartmentId" jdbcType="CHAR"/>
+        <result column="SYS_ROLE_ID" property="sysRoleId" jdbcType="CHAR"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="PASSWORD" property="password" jdbcType="VARCHAR"/>
+        <result column="REAL_NAME" property="realName" jdbcType="VARCHAR"/>
+        <result column="PHONE" property="phone" jdbcType="VARCHAR"/>
+        <result column="CODE" property="code" jdbcType="VARCHAR"/>
+        <result column="PHOTO" property="photo" jdbcType="VARCHAR"/>
+        <result column="SEX" property="sex" jdbcType="INTEGER"/>
+        <result column="WEIXIN" property="weixin" jdbcType="VARCHAR"/>
+        <result column="QQ" property="qq" jdbcType="VARCHAR"/>
+        <result column="EMAIL" property="email" jdbcType="VARCHAR"/>
+        <result column="ID_CARD" property="idCard" jdbcType="VARCHAR"/>
+        <result column="BIRTHDAY" property="birthday" jdbcType="DATE"/>
+        <result column="NATIVE_PLACE" property="nativePlace" jdbcType="VARCHAR"/>
+        <result column="CURR_ADDRESS" property="currAddress" jdbcType="VARCHAR"/>
+        <result column="LOGIN_IP" property="loginIp" jdbcType="VARCHAR"/>
+        <result column="LOGIN_DATE" property="loginDate" jdbcType="TIMESTAMP"/>
+        <result column="LOGIN_COUNT" property="loginCount" jdbcType="BIGINT"/>
+        <result column="STATUS" property="status" jdbcType="INTEGER"/>
+        <result column="CREATEUSER" property="createuser" jdbcType="CHAR"/>
+        <result column="CREATEDATE" property="createdate" jdbcType="TIMESTAMP"/>
+        <result column="UPDATEUSER" property="updateuser" jdbcType="CHAR"/>
+        <result column="UPDATEDATE" property="updatedate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+    ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, NAME, PASSWORD, REAL_NAME, PHONE, CODE, PHOTO, 
+    SEX, WEIXIN, QQ, EMAIL, ID_CARD, BIRTHDAY, NATIVE_PLACE, CURR_ADDRESS, LOGIN_IP, 
+    LOGIN_DATE, LOGIN_COUNT, STATUS, CREATEUSER, CREATEDATE, UPDATEUSER, UPDATEDATE
+  </sql>
+    <select id="selectByExample" resultMap="BaseResultMap"
+            parameterType="com.example.system.system.entity.SysUserExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from sys_user
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_user
+        where ID = #{id,jdbcType=CHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_user
+    where ID = #{id,jdbcType=CHAR}
+  </delete>
+    <delete id="deleteByExample" parameterType="com.example.system.system.entity.SysUserExample">
+        delete from sys_user
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.example.system.system.entity.SysUser">
+    insert into sys_user (ID, SYS_DEPARTMENT_ID, SYS_ROLE_ID, 
+      NAME, PASSWORD, REAL_NAME, 
+      PHONE, CODE, PHOTO, 
+      SEX, WEIXIN, QQ, EMAIL, 
+      ID_CARD, BIRTHDAY, NATIVE_PLACE, 
+      CURR_ADDRESS, LOGIN_IP, LOGIN_DATE, 
+      LOGIN_COUNT, STATUS, CREATEUSER, 
+      CREATEDATE, UPDATEUSER, UPDATEDATE
+      )
+    values (#{id,jdbcType=CHAR}, #{sysDepartmentId,jdbcType=CHAR}, #{sysRoleId,jdbcType=CHAR}, 
+      #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{photo,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=INTEGER}, #{weixin,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{nativePlace,jdbcType=VARCHAR}, 
+      #{currAddress,jdbcType=VARCHAR}, #{loginIp,jdbcType=VARCHAR}, #{loginDate,jdbcType=TIMESTAMP}, 
+      #{loginCount,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, #{createuser,jdbcType=CHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{updateuser,jdbcType=CHAR}, #{updatedate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.example.system.system.entity.SysUser">
+        insert into sys_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="sysDepartmentId != null">
+                SYS_DEPARTMENT_ID,
+            </if>
+            <if test="sysRoleId != null">
+                SYS_ROLE_ID,
+            </if>
+            <if test="name != null">
+                NAME,
+            </if>
+            <if test="password != null">
+                PASSWORD,
+            </if>
+            <if test="realName != null">
+                REAL_NAME,
+            </if>
+            <if test="phone != null">
+                PHONE,
+            </if>
+            <if test="code != null">
+                CODE,
+            </if>
+            <if test="photo != null">
+                PHOTO,
+            </if>
+            <if test="sex != null">
+                SEX,
+            </if>
+            <if test="weixin != null">
+                WEIXIN,
+            </if>
+            <if test="qq != null">
+                QQ,
+            </if>
+            <if test="email != null">
+                EMAIL,
+            </if>
+            <if test="idCard != null">
+                ID_CARD,
+            </if>
+            <if test="birthday != null">
+                BIRTHDAY,
+            </if>
+            <if test="nativePlace != null">
+                NATIVE_PLACE,
+            </if>
+            <if test="currAddress != null">
+                CURR_ADDRESS,
+            </if>
+            <if test="loginIp != null">
+                LOGIN_IP,
+            </if>
+            <if test="loginDate != null">
+                LOGIN_DATE,
+            </if>
+            <if test="loginCount != null">
+                LOGIN_COUNT,
+            </if>
+            <if test="status != null">
+                STATUS,
+            </if>
+            <if test="createuser != null">
+                CREATEUSER,
+            </if>
+            <if test="createdate != null">
+                CREATEDATE,
+            </if>
+            <if test="updateuser != null">
+                UPDATEUSER,
+            </if>
+            <if test="updatedate != null">
+                UPDATEDATE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=CHAR},
+            </if>
+            <if test="sysDepartmentId != null">
+                #{sysDepartmentId,jdbcType=CHAR},
+            </if>
+            <if test="sysRoleId != null">
+                #{sysRoleId,jdbcType=CHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="realName != null">
+                #{realName,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="photo != null">
+                #{photo,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="weixin != null">
+                #{weixin,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="idCard != null">
+                #{idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday != null">
+                #{birthday,jdbcType=DATE},
+            </if>
+            <if test="nativePlace != null">
+                #{nativePlace,jdbcType=VARCHAR},
+            </if>
+            <if test="currAddress != null">
+                #{currAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="loginIp != null">
+                #{loginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="loginDate != null">
+                #{loginDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginCount != null">
+                #{loginCount,jdbcType=BIGINT},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createuser != null">
+                #{createuser,jdbcType=CHAR},
+            </if>
+            <if test="createdate != null">
+                #{createdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateuser != null">
+                #{updateuser,jdbcType=CHAR},
+            </if>
+            <if test="updatedate != null">
+                #{updatedate,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.example.system.system.entity.SysUserExample"
+            resultType="java.lang.Integer">
+        select count(*) from sys_user
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update sys_user
+        <set>
+            <if test="record.id != null">
+                ID = #{record.id,jdbcType=CHAR},
+            </if>
+            <if test="record.sysDepartmentId != null">
+                SYS_DEPARTMENT_ID = #{record.sysDepartmentId,jdbcType=CHAR},
+            </if>
+            <if test="record.sysRoleId != null">
+                SYS_ROLE_ID = #{record.sysRoleId,jdbcType=CHAR},
+            </if>
+            <if test="record.name != null">
+                NAME = #{record.name,jdbcType=VARCHAR},
+            </if>
+            <if test="record.password != null">
+                PASSWORD = #{record.password,jdbcType=VARCHAR},
+            </if>
+            <if test="record.realName != null">
+                REAL_NAME = #{record.realName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.phone != null">
+                PHONE = #{record.phone,jdbcType=VARCHAR},
+            </if>
+            <if test="record.code != null">
+                CODE = #{record.code,jdbcType=VARCHAR},
+            </if>
+            <if test="record.photo != null">
+                PHOTO = #{record.photo,jdbcType=VARCHAR},
+            </if>
+            <if test="record.sex != null">
+                SEX = #{record.sex,jdbcType=INTEGER},
+            </if>
+            <if test="record.weixin != null">
+                WEIXIN = #{record.weixin,jdbcType=VARCHAR},
+            </if>
+            <if test="record.qq != null">
+                QQ = #{record.qq,jdbcType=VARCHAR},
+            </if>
+            <if test="record.email != null">
+                EMAIL = #{record.email,jdbcType=VARCHAR},
+            </if>
+            <if test="record.idCard != null">
+                ID_CARD = #{record.idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="record.birthday != null">
+                BIRTHDAY = #{record.birthday,jdbcType=DATE},
+            </if>
+            <if test="record.nativePlace != null">
+                NATIVE_PLACE = #{record.nativePlace,jdbcType=VARCHAR},
+            </if>
+            <if test="record.currAddress != null">
+                CURR_ADDRESS = #{record.currAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="record.loginIp != null">
+                LOGIN_IP = #{record.loginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="record.loginDate != null">
+                LOGIN_DATE = #{record.loginDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.loginCount != null">
+                LOGIN_COUNT = #{record.loginCount,jdbcType=BIGINT},
+            </if>
+            <if test="record.status != null">
+                STATUS = #{record.status,jdbcType=INTEGER},
+            </if>
+            <if test="record.createuser != null">
+                CREATEUSER = #{record.createuser,jdbcType=CHAR},
+            </if>
+            <if test="record.createdate != null">
+                CREATEDATE = #{record.createdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.updateuser != null">
+                UPDATEUSER = #{record.updateuser,jdbcType=CHAR},
+            </if>
+            <if test="record.updatedate != null">
+                UPDATEDATE = #{record.updatedate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update sys_user
+        set ID = #{record.id,jdbcType=CHAR},
+        SYS_DEPARTMENT_ID = #{record.sysDepartmentId,jdbcType=CHAR},
+        SYS_ROLE_ID = #{record.sysRoleId,jdbcType=CHAR},
+        NAME = #{record.name,jdbcType=VARCHAR},
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+        REAL_NAME = #{record.realName,jdbcType=VARCHAR},
+        PHONE = #{record.phone,jdbcType=VARCHAR},
+        CODE = #{record.code,jdbcType=VARCHAR},
+        PHOTO = #{record.photo,jdbcType=VARCHAR},
+        SEX = #{record.sex,jdbcType=INTEGER},
+        WEIXIN = #{record.weixin,jdbcType=VARCHAR},
+        QQ = #{record.qq,jdbcType=VARCHAR},
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+        ID_CARD = #{record.idCard,jdbcType=VARCHAR},
+        BIRTHDAY = #{record.birthday,jdbcType=DATE},
+        NATIVE_PLACE = #{record.nativePlace,jdbcType=VARCHAR},
+        CURR_ADDRESS = #{record.currAddress,jdbcType=VARCHAR},
+        LOGIN_IP = #{record.loginIp,jdbcType=VARCHAR},
+        LOGIN_DATE = #{record.loginDate,jdbcType=TIMESTAMP},
+        LOGIN_COUNT = #{record.loginCount,jdbcType=BIGINT},
+        STATUS = #{record.status,jdbcType=INTEGER},
+        CREATEUSER = #{record.createuser,jdbcType=CHAR},
+        CREATEDATE = #{record.createdate,jdbcType=TIMESTAMP},
+        UPDATEUSER = #{record.updateuser,jdbcType=CHAR},
+        UPDATEDATE = #{record.updatedate,jdbcType=TIMESTAMP}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.system.system.entity.SysUser">
+        update sys_user
+        <set>
+            <if test="sysDepartmentId != null">
+                SYS_DEPARTMENT_ID = #{sysDepartmentId,jdbcType=CHAR},
+            </if>
+            <if test="sysRoleId != null">
+                SYS_ROLE_ID = #{sysRoleId,jdbcType=CHAR},
+            </if>
+            <if test="name != null">
+                NAME = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                PASSWORD = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="realName != null">
+                REAL_NAME = #{realName,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                PHONE = #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="code != null">
+                CODE = #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="photo != null">
+                PHOTO = #{photo,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                SEX = #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="weixin != null">
+                WEIXIN = #{weixin,jdbcType=VARCHAR},
+            </if>
+            <if test="qq != null">
+                QQ = #{qq,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                EMAIL = #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="idCard != null">
+                ID_CARD = #{idCard,jdbcType=VARCHAR},
+            </if>
+            <if test="birthday != null">
+                BIRTHDAY = #{birthday,jdbcType=DATE},
+            </if>
+            <if test="nativePlace != null">
+                NATIVE_PLACE = #{nativePlace,jdbcType=VARCHAR},
+            </if>
+            <if test="currAddress != null">
+                CURR_ADDRESS = #{currAddress,jdbcType=VARCHAR},
+            </if>
+            <if test="loginIp != null">
+                LOGIN_IP = #{loginIp,jdbcType=VARCHAR},
+            </if>
+            <if test="loginDate != null">
+                LOGIN_DATE = #{loginDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="loginCount != null">
+                LOGIN_COUNT = #{loginCount,jdbcType=BIGINT},
+            </if>
+            <if test="status != null">
+                STATUS = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createuser != null">
+                CREATEUSER = #{createuser,jdbcType=CHAR},
+            </if>
+            <if test="createdate != null">
+                CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateuser != null">
+                UPDATEUSER = #{updateuser,jdbcType=CHAR},
+            </if>
+            <if test="updatedate != null">
+                UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=CHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.example.system.system.entity.SysUser">
+    update sys_user
+    set SYS_DEPARTMENT_ID = #{sysDepartmentId,jdbcType=CHAR},
+      SYS_ROLE_ID = #{sysRoleId,jdbcType=CHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      REAL_NAME = #{realName,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      CODE = #{code,jdbcType=VARCHAR},
+      PHOTO = #{photo,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=INTEGER},
+      WEIXIN = #{weixin,jdbcType=VARCHAR},
+      QQ = #{qq,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      ID_CARD = #{idCard,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=DATE},
+      NATIVE_PLACE = #{nativePlace,jdbcType=VARCHAR},
+      CURR_ADDRESS = #{currAddress,jdbcType=VARCHAR},
+      LOGIN_IP = #{loginIp,jdbcType=VARCHAR},
+      LOGIN_DATE = #{loginDate,jdbcType=TIMESTAMP},
+      LOGIN_COUNT = #{loginCount,jdbcType=BIGINT},
+      STATUS = #{status,jdbcType=INTEGER},
+      CREATEUSER = #{createuser,jdbcType=CHAR},
+      CREATEDATE = #{createdate,jdbcType=TIMESTAMP},
+      UPDATEUSER = #{updateuser,jdbcType=CHAR},
+      UPDATEDATE = #{updatedate,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=CHAR}
+  </update>
+    <delete id="deletePermission" parameterType="string">
+    DELETE
+    FROM
+        sys_user_ref_sys_permission
+    WHERE
+        SYSY_USER_ID = #{userId}
+  </delete>
+    <insert id="permission" parameterType="com.example.system.system.entity.SysUserSysPermissionFrom">
+        INSERT INTO `sys_user_ref_sys_permission`
+        <trim prefix="(" suffix=")">
+            `SYSY_USER_ID`,
+            `SYS_PERMISSION_ID`
+        </trim>
+        VALUES
+
+        <foreach collection="ids" item="id" separator=",">
+            <trim prefix="(" suffix=")">
+                #{userId} ,#{id}
+            </trim>
+        </foreach>
+    </insert>
+
+    <resultMap id="menusMap" type="com.example.system.system.entity.vo.MenusTree">
+        <result column="ID" property="id"/>
+        <result column="PARENT_ID" property="pid"/>
+        <result column="NAME" property="name"/>
+        <result column="ICO" property="icon"/>
+        <result column="URL" property="url"/>
+        <result column="SEQ" property="seq"/>
+    </resultMap>
+
+    <select id="permissionByUserId" resultMap="menusMap" parameterType="string">
+        SELECT distinct
+            b.ID,
+            b.PARENT_ID,
+            b. NAME,
+            b.URL,
+            b.ICON,
+            b.SEQ
+        FROM
+            sys_user_ref_sys_permission a
+        LEFT JOIN sys_permission b ON a.SYS_PERMISSION_ID = b.ID
+        WHERE a.SYSY_USER_ID = #{userId}
+        ORDER BY
+            b.PARENT_ID
+  </select>
+    <select id="menus" resultMap="menusMap" parameterType="string">
+
+        SELECT
+            tmp.*
+        FROM
+            (
+                (
+                    SELECT
+                        c.ID,
+                        c.PARENT_ID,
+                        c. NAME,
+                        c.URL,
+                        c.ICON,
+                        c.SEQ
+                    FROM
+                        sys_user a
+                    JOIN sys_role_ref_sys_permission b ON a.SYS_ROLE_ID = b.SYS_ROLE_ID
+                    JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID
+                    WHERE
+                        a.ID = #{userId}
+                )
+                UNION
+                    (
+                        SELECT
+                            c.ID,
+                            c.PARENT_ID,
+                            c. NAME,
+                            c.URL,
+                            c.ICON,
+                            c.SEQ
+                        FROM
+                            sys_user a
+                        JOIN sys_user_ref_sys_permission b ON b.SYSY_USER_ID = a.ID
+                        JOIN sys_permission c ON c.ID = b.SYS_PERMISSION_ID
+                        WHERE
+                            a.ID = #{userId}
+                    )
+            ) tmp
+        WHERE
+            1 = 1
+        ORDER BY
+            tmp.ID
+  </select>
+</mapper>
