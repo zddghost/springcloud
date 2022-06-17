@@ -24,7 +24,7 @@
         <swagger2.version>2.5.0</swagger2.version>
         <mybatis.version>2.0.0</mybatis.version>
         <mysql.version>8.0.16</mysql.version>
-        <fastjson.version>1.2.58</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <kaptcha.version>2.3.2</kaptcha.version>
         <jwt.version>3.4.0</jwt.version>
         <pagehelper.version>5.1.10</pagehelper.version>
