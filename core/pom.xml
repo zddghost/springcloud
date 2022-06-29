@@ -20,7 +20,7 @@
         <lombok.version>1.18.8</lombok.version>
         <swagger2.version>2.5.0</swagger2.version>
         <fastjson.version>1.2.58</fastjson.version>
-        <poi.version>3.17</poi.version>
+        <poi.version>4.1.1</poi.version>
     </properties>
 
     <dependencies>
